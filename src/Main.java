@@ -14,10 +14,12 @@ public class Main {
         Senhas.add(0, "dev123");
 
         System.out.println("\tMENU: \n\n1 - Cadastrar usuário \n2 - Fazer login");
-        int opcao = sc.nexInt();
+        int opcao = sc.nextInt();
         sc.nextLine();
 
         if (opcao == 1) {
+            Usuario user = new Usuario();
+            user.cadastrar_usuario(Logins.get(2), Senhas.get(2));
 
 
         } else if (opcao == 2) {
