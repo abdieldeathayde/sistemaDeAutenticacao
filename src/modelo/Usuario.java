@@ -8,8 +8,8 @@ public class Usuario {
         this.senha = senha;
     }
 
-    private String login;
-    private String senha;
+    private final String login;
+    private final String senha;
 
     public String getLogin() {
         return login;

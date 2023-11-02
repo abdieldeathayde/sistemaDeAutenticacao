@@ -27,8 +27,6 @@ public class Main {
                 users.add(usuarios);
 
 
-
-
                 System.out.println("Usuario: " + usuarios + "array: " + users + " cadastrado com sucesso! \nSenha: " + senha);
 
                 System.out.println("\tMENU: \n\n1 - Cadastrar usuário \n2 - Fazer login");
@@ -36,10 +34,10 @@ public class Main {
                 sc.nextLine();
 
 
-            } else if (opcao == 2) {
-                Login lgin = new Login();
-                lgin.efetuar_login();
-            } else {
+//            } else if (opcao == 2) {
+//                Login lgin = new Login();
+//                lgin.efetuar_login();
+            }else {
                 System.out.println("Opção inválida!");
                 break;
             }
