@@ -20,13 +20,13 @@ public class Main {
                 user.cadastrar_usuario();
                 users.add(user.getLogin());
 
-                for (int i = 0; i < users.size(); i ++) {
-                    System.out.println("Usuario: " + users.indexOf(i) + " cadastrado com sucesso!");
 
-                    System.out.println("\tMENU: \n\n1 - Cadastrar usuário \n2 - Fazer login");
-                    opcao = sc.nextInt();
-                    sc.nextLine();
-                }
+                System.out.println("Usuario: " + users + " cadastrado com sucesso!");
+
+                System.out.println("\tMENU: \n\n1 - Cadastrar usuário \n2 - Fazer login");
+                opcao = sc.nextInt();
+                sc.nextLine();
+
 
             } else if (opcao == 2) {
                 Login lgin = new Login();
