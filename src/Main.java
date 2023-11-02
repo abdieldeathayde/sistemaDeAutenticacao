@@ -6,13 +6,12 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<String> users = new ArrayList<>();
+        ArrayList<Usuario> users = new ArrayList<>();
 
         Scanner sc = new Scanner(System.in);
         int opcao;
         String login;
         String senha;
-        Usuario usuarios = new Usuario();
 
         do {
             System.out.println("\tMENU: \n\n1 - Cadastrar usuário \n2 - Fazer login");
@@ -24,7 +23,8 @@ public class Main {
                 login = sc.nextLine();
                 System.out.println("Escolha uma senha: ");
                 senha = sc.nextLine();
-                users.add(login);
+                Usuario usuarios = new Usuario(login, senha);
+                users.add(usuarios);
 
 
 

@@ -3,6 +3,11 @@ package modelo;
 import java.util.Objects;
 
 public class Usuario {
+    public Usuario(String login, String senha) {
+        this.login = login;
+        this.senha = senha;
+    }
+
     private String login;
     private String senha;
 
