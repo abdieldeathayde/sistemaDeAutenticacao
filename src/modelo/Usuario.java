@@ -1,11 +1,8 @@
 package modelo;
 
 import java.util.Objects;
-import java.util.Scanner;
 
 public class Usuario {
-
-    Scanner sc = new Scanner(System.in);
     private String login;
     private String senha;
 
@@ -29,25 +26,4 @@ public class Usuario {
     public int hashCode() {
         return Objects.hash(login);
     }
-
-    public void cadastrar_usuario() {
-
-        System.out.println("Por favor, digite seu login: \n");
-        login = sc.nextLine() ;
-
-        System.out.println("Por favor, digite sua senha: \n");
-        senha = sc.nextLine();
-
-        if (login.isEmpty() && senha.isEmpty()) {
-            System.out.println("Erro! login ou senha estão vazios!");
-        } else {
-            System.out.println("Cadastro efetuado com sucesso!");
-        }
-
-
-
-    }
-
-
-
 }

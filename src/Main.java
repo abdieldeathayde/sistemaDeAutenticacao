@@ -1,3 +1,4 @@
+
 import modelo.Usuario;
 
 import java.util.ArrayList;
@@ -9,6 +10,9 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
         int opcao;
+        String login;
+        String senha;
+        Usuario usuarios = new Usuario();
 
         do {
             System.out.println("\tMENU: \n\n1 - Cadastrar usuário \n2 - Fazer login");
@@ -16,12 +20,16 @@ public class Main {
             sc.nextLine();
 
             if (opcao == 1) {
-                Usuario user = new Usuario();
-                user.cadastrar_usuario();
-                users.add(user.getLogin());
+                System.out.println("Escolha um login: ");
+                login = sc.nextLine();
+                System.out.println("Escolha uma senha: ");
+                senha = sc.nextLine();
+                users.add(login);
 
 
-                System.out.println("Usuario: " + users + " cadastrado com sucesso!");
+
+
+                System.out.println("Usuario: " + usuarios + "array: " + users + " cadastrado com sucesso! \nSenha: " + senha);
 
                 System.out.println("\tMENU: \n\n1 - Cadastrar usuário \n2 - Fazer login");
                 opcao = sc.nextInt();
