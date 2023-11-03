@@ -17,11 +17,11 @@ public class Main {
 
         do {
 
-
             switch(opcao) {
-                case 1: cadastrarUsuario();
-                case 2: efetuarLogin();
-            }
+                case 1 -> cadastrarUsuario();
+                case 2 -> efetuarLogin();
+                default  -> System.out.println("Opção inválida");
+            };
             opcao = menu();
 
         }while (opcao != 0);
