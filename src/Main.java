@@ -7,16 +7,12 @@ public class Main {
     public static Set<Usuario> usersSet = new HashSet<>();
     public static Scanner sc = new Scanner(System.in);
 
-    public static String login;
-    public static String senha;
-
-    public static int opcao;
-
     public static void main(String[] args) {
-
+        int opcao;
+        System.out.println("\tMENU: \n\n0 - Sair  \n1 - Cadastrar usuário \n2 - Fazer login");
+        opcao = sc.nextInt();
 
         do {
-
             switch(opcao) {
                 case 1 -> cadastrarUsuario();
                 case 2 -> efetuarLogin();
@@ -32,9 +28,9 @@ public class Main {
 
     private static void cadastrarUsuario() {
         System.out.println("Escolha um login: ");
-        login = sc.nextLine();
+        String login = sc.nextLine();
         System.out.println("Escolha uma senha: ");
-        senha = sc.nextLine();
+        String senha = sc.nextLine();
         Usuario usuarios = new Usuario(login, senha);
         usersSet.add(usuarios);
     }
