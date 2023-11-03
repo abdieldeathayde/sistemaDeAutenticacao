@@ -1,47 +1,48 @@
-
 import modelo.Usuario;
-
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Main {
-    public static void main(String[] args) {
-        ArrayList<Usuario> users = new ArrayList<>();
+    public static Set<Usuario> usersSet = new HashSet<>();
+    public static Scanner sc = new Scanner(System.in);
 
-        Scanner sc = new Scanner(System.in);
-        int opcao;
-        String login;
-        String senha;
+    public static String login;
+    public static String senha;
+
+    public static int opcao;
+
+    public static void main(String[] args) {
+
 
         do {
-            System.out.println("\tMENU: \n\n1 - Cadastrar usuário \n2 - Fazer login");
-            opcao = sc.nextInt();
-            sc.nextLine();
-
-            if (opcao == 1) {
-                System.out.println("Escolha um login: ");
-                login = sc.nextLine();
-                System.out.println("Escolha uma senha: ");
-                senha = sc.nextLine();
-                Usuario usuarios = new Usuario(login, senha);
-                users.add(usuarios);
 
 
-                System.out.println("Usuario: " + usuarios + "array: " + users + " cadastrado com sucesso! \nSenha: " + senha);
-
-                System.out.println("\tMENU: \n\n1 - Cadastrar usuário \n2 - Fazer login");
-                opcao = sc.nextInt();
-                sc.nextLine();
-
-
-//            } else if (opcao == 2) {
-//                Login lgin = new Login();
-//                lgin.efetuar_login();
-            }else {
-                System.out.println("Opção inválida!");
-                break;
+            switch(opcao) {
+                case 1: cadastrarUsuario();
+                case 2: efetuarLogin();
             }
+            opcao = menu();
 
         }while (opcao != 0);
+    }
+
+    private static void efetuarLogin() {
+    }
+
+    private static void cadastrarUsuario() {
+        System.out.println("Escolha um login: ");
+        login = sc.nextLine();
+        System.out.println("Escolha uma senha: ");
+        senha = sc.nextLine();
+        Usuario usuarios = new Usuario(login, senha);
+        usersSet.add(usuarios);
+    }
+
+    static int menu() {
+        System.out.println("\tMENU: \n\n0 - Sair  \n1 - Cadastrar usuário \n2 - Fazer login");
+        int opcao = sc.nextInt();
+        sc.nextLine();
+        return opcao;
     }
 }
