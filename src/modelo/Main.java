@@ -21,6 +21,8 @@ public class Main {
                 case 2 -> efetuarLogin();
                 default -> System.out.println("Opção inválida");
             }
+
+
             opcao = menu();
 
         } while (opcao != 0);
@@ -50,10 +52,11 @@ public class Main {
     static int menu() {
 
         int opcao;
-        System.out.println("\tMENU: \n\n0 - Sair  \n1 - Cadastrar usuário \n2 - Fazer login");
+        System.out.println("MENU: \n\n0 - Sair  \n1 - Cadastrar usuário \n2 - Fazer login");
         opcao = sc.nextInt();
+        sc.nextLine();
+
+
         return opcao;
-
-
     }
 }
