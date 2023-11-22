@@ -11,7 +11,7 @@ public class Main {
         System.out.println("MENU: \n\n0 - Sair  \n1 - Cadastrar usuário \n2 - Fazer login");
         String opcao = sc.next();
 
-        while (opcao.startsWith("1") || opcao.startsWith("2")) {
+        while (opcao.contains("1") || opcao.contains("2")) {
             switch (opcao) {
                 case "0" -> System.out.println("Encerrando seção! Obrigado por utilizar nosso sistema!");
                 case "1" -> cadastrarUsuario();
