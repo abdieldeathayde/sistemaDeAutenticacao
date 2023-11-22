@@ -7,19 +7,8 @@ import java.util.Set;
 public class Main {
     static Set<Usuario> usersSet = new HashSet<>();
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("MENU: \n\n0 - Sair  \n1 - Cadastrar usuário \n2 - Fazer login");
-        String opcao = sc.next();
+        menu();
 
-        while (opcao.contains("1") || opcao.contains("2")) {
-            switch (opcao) {
-                case "0" -> System.out.println("Encerrando seção! Obrigado por utilizar nosso sistema!");
-                case "1" -> cadastrarUsuario();
-                case "2" -> efetuarLogin();
-            }
-            System.out.println("MENU: \n\n0 - Sair  \n1 - Cadastrar usuário \n2 - Fazer login");
-            opcao = sc.next();
-        }
     }
 
     //            System.out.println("MENU: \n\n0 - Sair  \n1 - Cadastrar usuário \n2 - Fazer login");
@@ -55,7 +44,25 @@ public class Main {
     }
 
     protected static void menu() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("MENU: \n\n0 - Sair  \n1 - Cadastrar usuário \n2 - Fazer login");
+        String opcao = sc.next();
 
+        while (opcao.contains("1") || opcao.contains("2")) {
+            switch (opcao) {
+                case "0" -> System.out.println("Encerrando seção! Obrigado por utilizar nosso sistema!");
+                case "1" -> cadastrarUsuario();
+                case "2" -> efetuarLogin();
+                default  -> System.out.println("Opção inválida");
+            }
+            System.out.println("MENU: \n\n0 - Sair  \n1 - Cadastrar usuário \n2 - Fazer login");
+            if (sc.hasNext()) {
+                opcao = sc.next();
+            } else {
+                opcao = "0";
+            }
+
+        }
 
     }
 }
